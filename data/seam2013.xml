@@ -1,0 +1,152 @@
+<!DOCTYPE StreamControlLayout>
+<layout width="390" height="220" tabbed="1">
+    <tab name="Match Info">
+        <label x="10" y="14" width="46" height="13">Player 1</label>
+        <label x="10" y="44" width="46" height="13">Player 2</label>
+        <lineEdit id="pName1" x="60" y="10" width="170" height="20" dataSet="players.csv" />
+        <lineEdit id="pName2" x="60" y="40" width="170" height="20" dataSet="players.csv" />
+        <spinBox id="pScore1" x="240" y="10" width="40" height="22" maximum="999" />
+        <spinBox id="pScore2" x="240" y="40" width="40" height="22" maximum="999" />
+        <button type="reset" x="290" y="10" width="40" height="23" tooltip="Clear Player 1 fields" id="clear1" reset="pName1,pTwitter1,pCountry1">Clear</button>
+        <button type="reset" x="330" y="10" width="40" height="23" tooltip="Reset the Scores" id="reset" reset="pScore1,pScore2">Reset</button>
+        <button type="reset" x="290" y="40" width="40" height="23" tooltip="Clear Player 2 fields" id="clear2" reset="pName2,pTwitter2,pCountry2">Clear</button>
+        <button type="swap" x="330" y="40" width="40" height="23" tooltip="Swap the Scores" id="swap" swapSet1="pName1,pScore1,pCountry1,inWinners1" swapSet2="pName2,pScore2,pCountry2,inWinners2">Swap</button>
+        <line x="10" y="71" width="370" height="3" />
+        <label x="10" y="84" width="46" height="13">Country1</label>
+        <lineEdit id="pCountry1" x="60" y="80" width="250" height="20" dataSet="players.csv" dataField="2" master="pName1" />
+        <checkBox x="320" y="80" width="50" height="20" id="inWinners1">E-Tank</checkBox>
+        <label x="10" y="114" width="46" height="13">Country2</label>
+        <lineEdit id="pCountry2" x="60" y="110" width="250" height="20" dataSet="players.csv" dataField="2" master="pName2" />
+        <checkBox x="320" y="110" width="50" height="20" id="inWinners2">E-Tank</checkBox>
+    </tab>
+    <tab name="Lower Thirds">
+        <label x="10" y="14" width="46" height="13">cTitle 1</label>
+        <label x="10" y="44" width="46" height="13">cTitle 2</label>
+        <lineEdit id="cTitle1" x="60" y="10" width="321" height="20" />
+        <lineEdit id="cTitle2" x="60" y="40" width="321" height="20" />
+        <line x="10" y="71" width="370" height="3" />
+        <label x="10" y="84" width="46" height="13">pTitle 1</label>
+        <label x="10" y="114" width="46" height="13">pTitle 2</label>
+        <lineEdit id="pTitle1" x="60" y="80" width="321" height="20" />
+        <lineEdit id="pTitle2" x="60" y="110" width="321" height="20" />
+    </tab>
+    <tab name="Top 8">
+        <tabSet x="0" y="0" width="385" height="155">
+            <tab name="Winners" scrollable="1">
+                <lineEdit id="wm1p1" x="10" y="10" width="80" height="20" dataSet="players.csv" />
+                <lineEdit id="wm1p1s" x="90" y="10" width="30" height="20" />
+                <lineEdit id="wm1p1c" x="120" y="10" width="30" height="20" dataSet="players.csv" dataField="2" master="wm1p1" />
+                <lineEdit id="wm1p2" x="10" y="30" width="80" height="20" dataSet="players.csv" />
+                <lineEdit id="wm1p2s" x="90" y="30" width="30" height="20" />
+                <lineEdit id="wm1p2c" x="120" y="30" width="30" height="20" dataSet="players.csv" dataField="2" master="wm1p2" />
+
+                <lineEdit id="wm2p1" x="10" y="70" width="80" height="20" dataSet="players.csv" />
+                <lineEdit id="wm2p1s" x="90" y="70" width="30" height="20" />
+                <lineEdit id="wm2p1c" x="120" y="70" width="30" height="20" dataSet="players.csv" dataField="2" master="wm2p1" />
+                <lineEdit id="wm2p2" x="10" y="90" width="80" height="20" dataSet="players.csv" />
+                <lineEdit id="wm2p2s" x="90" y="90" width="30" height="20" />
+                <lineEdit id="wm2p2c" x="120" y="90" width="30" height="20" dataSet="players.csv" dataField="2" master="wm2p2" />
+
+
+                <lineEdit id="wfp1" x="160" y="40" width="80" height="20" dataSet="players.csv">Winners Final</lineEdit>
+                <lineEdit id="wfp1s" x="240" y="40" width="30" height="20" />
+                <lineEdit id="wfp1c" x="270" y="40" width="30" height="20" dataSet="players.csv" dataField="2" master="wfp1" />
+                <lineEdit id="wfp2" x="160" y="60" width="80" height="20" dataSet="players.csv">Winners Final</lineEdit>
+                <lineEdit id="wfp2s" x="240" y="60" width="30" height="20" />
+                <lineEdit id="wfp2c" x="270" y="60" width="30" height="20" dataSet="players.csv" dataField="2" master="wfp2" />
+
+                <lineEdit id="lfp1" x="160" y="100" width="80" height="20" dataSet="players.csv">Losers Final</lineEdit>
+                <lineEdit id="lfp1s" x="240" y="100" width="30" height="20" />
+                <lineEdit id="lfp1c" x="270" y="100" width="30" height="20" dataSet="players.csv" dataField="2" master="lfp1" />
+                <lineEdit id="lfp2" x="160" y="120" width="80" height="20" dataSet="players.csv">Losers Final</lineEdit>
+                <lineEdit id="lfp2s" x="240" y="120" width="30" height="20" />
+                <lineEdit id="lfp2c" x="270" y="120" width="30" height="20" dataSet="players.csv" dataField="2" master="lfp2" />
+
+
+                <lineEdit id="gfp1" x="310" y="70" width="80" height="20" dataSet="players.csv">Grand Final</lineEdit>
+                <lineEdit id="gfp1s" x="390" y="70" width="30" height="20" />
+                <lineEdit id="gfp1c" x="420" y="70" width="30" height="20" dataSet="players.csv" dataField="2" master="gfp1" />
+                <lineEdit id="gfp2" x="310" y="90" width="80" height="20" dataSet="players.csv">Grand Final</lineEdit>
+                <lineEdit id="gfp2s" x="390" y="90" width="30" height="20" />
+                <lineEdit id="gfp2c" x="420" y="90" width="30" height="20" dataSet="players.csv" dataField="2" master="gfp2" />
+
+                <lineEdit id="gf2p1" x="460" y="70" width="80" height="20" dataSet="players.csv">GFinal Reset</lineEdit>
+                <lineEdit id="gf2p1s" x="540" y="70" width="30" height="20" />
+                <lineEdit id="gf2p1c" x="570" y="70" width="30" height="20" dataSet="players.csv" dataField="2" master="gf2p1" />
+                <lineEdit id="gf2p2" x="460" y="90" width="80" height="20" dataSet="players.csv">GFinal Reset</lineEdit>
+                <lineEdit id="gf2p2s" x="540" y="90" width="30" height="20" />
+                <lineEdit id="gf2p2c" x="570" y="90" width="30" height="20" dataSet="players.csv" dataField="2" master="gf2p2" />
+
+                <label x="350" y="25" width="46" height="13">Winner:</label>
+                <radioGroup id="winner">
+                    <radioButton x="350" y="40" width="80" height="20" value="0">None</radioButton>
+                    <radioButton x="400" y="40" width="80" height="20" value="1">Player 1</radioButton>
+                    <radioButton x="470" y="40" width="80" height="20" value="2">Player 2</radioButton>
+                </radioGroup>
+
+            </tab>
+
+
+            <tab name="Losers" scrollable="1">
+                <lineEdit id="lm1p1" x="10" y="20" width="80" height="20" dataSet="players.csv" />
+                <lineEdit id="lm1p1s" x="90" y="20" width="30" height="20" />
+                <lineEdit id="lm1p1c" x="120" y="20" width="30" height="20" dataSet="players.csv" dataField="2" master="lm1p1" />
+                <lineEdit id="lm1p2" x="10" y="40" width="80" height="20" dataSet="players.csv" />
+                <lineEdit id="lm1p2s" x="90" y="40" width="30" height="20" />
+                <lineEdit id="lm1p2c" x="120" y="40" width="30" height="20" dataSet="players.csv" dataField="2" master="lm1p2" />
+
+                <lineEdit id="lm2p1" x="10" y="80" width="80" height="20" dataSet="players.csv" />
+                <lineEdit id="lm2p1s" x="90" y="80" width="30" height="20" />
+                <lineEdit id="lm2p1c" x="120" y="80" width="30" height="20" dataSet="players.csv" dataField="2" master="lm2p1" />
+                <lineEdit id="lm2p2" x="10" y="100" width="80" height="20" dataSet="players.csv" />
+                <lineEdit id="lm2p2s" x="90" y="100" width="30" height="20" />
+                <lineEdit id="lm2p2c" x="120" y="100" width="30" height="20" dataSet="players.csv" dataField="2" master="lm2p2" />
+
+
+                <lineEdit id="lm3p1" x="160" y="10" width="80" height="20" dataSet="players.csv">From Winners</lineEdit>
+                <lineEdit id="lm3p1s" x="240" y="10" width="30" height="20" />
+                <lineEdit id="lm3p1c" x="270" y="10" width="30" height="20" dataSet="players.csv" dataField="2" master="lm3p1" />
+                <lineEdit id="lm3p2" x="160" y="30" width="80" height="20" dataSet="players.csv" />
+                <lineEdit id="lm3p2s" x="240" y="30" width="30" height="20" />
+                <lineEdit id="lm3p2c" x="270" y="30" width="30" height="20" dataSet="players.csv" dataField="2" master="lm3p2" />
+
+                <lineEdit id="lm4p1" x="160" y="70" width="80" height="20" dataSet="players.csv">From Winners</lineEdit>
+                <lineEdit id="lm4p1s" x="240" y="70" width="30" height="20" />
+                <lineEdit id="lm4p1c" x="270" y="70" width="30" height="20" dataSet="players.csv" dataField="2" master="lm4p1" />
+                <lineEdit id="lm4p2" x="160" y="90" width="80" height="20" dataSet="players.csv" />
+                <lineEdit id="lm4p2s" x="240" y="90" width="30" height="20" />
+                <lineEdit id="lm4p2c" x="270" y="90" width="30" height="20" dataSet="players.csv" dataField="2" master="lm4p2" />
+
+
+                <lineEdit id="lsp1" x="310" y="30" width="80" height="20" dataSet="players.csv">Losers Semi</lineEdit>
+                <lineEdit id="lsp1s" x="390" y="30" width="30" height="20" />
+                <lineEdit id="lsp1c" x="420" y="30" width="30" height="20" dataSet="players.csv" dataField="2" master="lsp1" />
+                <lineEdit id="lsp2" x="310" y="50" width="80" height="20" dataSet="players.csv">Losers Semi</lineEdit>
+                <lineEdit id="lsp2s" x="390" y="50" width="30" height="20" />
+                <lineEdit id="lsp2c" x="420" y="50" width="30" height="20" dataSet="players.csv" dataField="2" master="lsp2" />
+
+            </tab>
+            <tab name="Resets">
+                <button type="reset" x="10" y="10" width="200" height="40" tooltip="Clear Winners fields" id="clearWinners" reset="wm1p1,wm1p1s,wm1p1c,wm1p2,wm1p2s,wm1p2c,wm2p1,wm2p1s,wm2p1c,wm2p2,wm2p2s,wm2p2c,wfp1,wfp1s,wfp1c,wfp2,wfp2s,wfp2c,lfp1,lfp1s,lfp1c,lfp2,lfp2s,lfp2c,gfp1,gfp1s,gfp1c,gfp2,gfp2s,gfp2c,gf2p1,gf2p1s,gf2p1c,gf2p2,gf2p2s,gf2p2c">Reset Winners</button>
+                <button type="reset" x="10" y="70" width="200" height="40" tooltip="Clear Losers fields" id="clearLosers" reset="lm1p1,lm1p1s,lm1p1c,lm1p2,lm1p2s,lm1p2c,lm2p1,lm2p1s,lm2p1c,lm2p2,lm2p2s,lm2p2c,lm3p1,lm3p1s,lm3p1c,lm3p2,lm3p2s,lm3p2c,lm4p1,lm4p1s,lm4p1c,lm4p2,lm4p2s,lm4p2c,lsp1,lsp1s,lsp1c,lsp2,lsp2s,lsp2c">Reset Losers</button>
+            </tab>
+        </tabSet>
+    </tab>
+    <tab name="Tweet/2ndStream">
+        <tweet id="twitter" x="10" y="10" width="380" height="60" picPath="twitter" />
+        <line x="10" y="71" width="370" height="3" />
+        <label x="10" y="84" width="46" height="13">Line1</label>
+        <label x="10" y="114" width="46" height="13">Line2</label>
+        <lineEdit id="streamLine1" x="60" y="80" width="321" height="20" />
+        <lineEdit id="streamLine2" x="60" y="110" width="321" height="20" />
+    </tab>
+    <tab name="Trophy">
+        <label x="10" y="14" width="46" height="13">Trophy</label>
+        <label x="10" y="44" width="46" height="13">Picture</label>
+        <label x="10" y="74" width="46" height="13">Type</label>
+        <lineEdit id="trophyText" x="60" y="10" width="321" height="20" dataSet="trophies.csv" />
+        <lineEdit id="trophyPic" x="60" y="40" width="321" height="20" dataSet="trophies.csv" dataField="2" master="trophyText" />
+        <lineEdit id="trophyType" x="60" y="70" width="321" height="20" dataSet="trophies.csv" dataField="3" master="trophyText" />
+    </tab>
+
+</layout>
