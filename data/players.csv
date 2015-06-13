@@ -7,7 +7,6 @@ w3,
 w4,
 BADASS MOFO,USA
 2,
-Losers 1 @@@,
 Winner 1,u
 Tom,USA
 Ram,USA
@@ -19,3 +18,22 @@ lower 3,
 lower 4,
 test,a
 Baller,a
+Final player 1,
+Final player 2,
+losers semi player 1,
+losers semi player 2,
+loser matchup 1 player 1,
+loser matchup 1 player 2,
+loser matchup 2 player 1,
+loser semi 1 player 1 (from winners),
+loser semi 1 player 2,
+loser semi 2 player 1 (from winners),
+loser semi 2 player 2,
+loser final player 1,
+losers final player 2,
+winner semi 1 player 1,
+winner semi 1 player 2,
+winner matchup 1 player 1,u
+winner matchup 1 player 2,
+winner matchup 2 player 1,
+winner matchup 2 player 2,
