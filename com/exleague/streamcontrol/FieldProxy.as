@@ -1,4 +1,4 @@
-/*
+﻿/*
 Copyright (c) 2015 Aaron Sherrill - @codecommando
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files
@@ -38,6 +38,7 @@ package  com.exleague.streamcontrol{
 		public function FieldProxy(_references:Object) {
 			// store our references
 			references = _references;
+			
 		}
 		public function update(xmlObj:XML):void {
 			//loop through references. Check to see if their value has changed

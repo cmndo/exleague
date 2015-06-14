@@ -1,4 +1,4 @@
-/*
+﻿/*
 Copyright (c) 2015 Aaron Sherrill - @codecommando
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files
@@ -13,7 +13,7 @@ MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVE
 FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */﻿
-package  {
+package com.exleague.view {
 
 	import flash.display.MovieClip;
 	import com.exleague.streamcontrol.XMLAdapter;
@@ -21,12 +21,13 @@ package  {
 	import com.exleague.streamcontrol.FieldProxy;
 
 
-	public class Bracket extends MovieClip {
+	public class BothBrackets extends MovieClip {
 
 		private var xmlAdapter:XMLAdapter;
 		private var fieldProxy:FieldProxy;
 
-		public function Bracket() {
+		public function BothBrackets() {
+			
 
 			// construct our adapter - There's an input field on the stage currently called sourceURLInput.
 			// but if you leave it blank, you'll load up the default file for streamcontrol.
@@ -35,7 +36,7 @@ package  {
 			// listen for adapter events
 			xmlAdapter.addEventListener(ExEvent.ERROR, reportError);
 			xmlAdapter.addEventListener(ExEvent.UPDATED, updateUI);
-
+			
 
 			/*
 				construct our proxy and pass in an object with the xml node name
@@ -55,25 +56,45 @@ package  {
 
 			*/
 			fieldProxy = new FieldProxy({
-				wm1p1:{
-					target:wm1p1.playerName
-					changed: function (newValue){
-						w1p1.playerName.text = newValue;
+				wm1p1: {
+					target: brackets.winners.wm1p1.playerName,
+					changed: function(newValue) {
+						brackets.winners.wm1p1.playerName.text = newValue;
 					}
 				},
-				wm1p2:{target:wm1p2.playerName},
-				wm2p1:{target:wm2p1.playerName},
-				wm2p2:{target:wm2p2.playerName},
-
-				wfp1:{target:wfp1.playerName},
-				wfp2:{target:wfp2.playerName},
-				lsp1:{target:lsp1.playerName},
-				lsp2:{target:lsp2.playerName},
-
-				gfp1:{target:gfp1.playerName},
-				gfp2:{target:gfp2.playerName}
+				wm1p2: {
+					target: brackets.winners.wm1p2.playerName
+				},
+				wm2p1: {
+					target: brackets.winners.wm2p1.playerName
+				},
+				wm2p2: {
+					target: brackets.winners.wm2p2.playerName
+				},
+				wfp1: {
+					target: brackets.winners.wfp1.playerName
+				},
+				wfp2: {
+					target: brackets.winners.wfp2.playerName
+				},
+				lsp1: {
+					target: brackets.winners.lsp1.playerName
+				},
+				lsp2: {
+					target: brackets.winners.lsp2.playerName
+				},
+				gfp1: {
+					target: brackets.winners.gfp1.playerName
+				},
+				gfp2: {
+					target: brackets.winners.gfp2.playerName
+				}
 
 			});
+			
+			
+			xmlAdapter.start(500);
+			
 
 		}
 

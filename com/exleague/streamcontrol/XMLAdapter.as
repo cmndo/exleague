@@ -1,4 +1,4 @@
-/*
+﻿/*
 Copyright (c) 2015 Aaron Sherrill - @codecommando
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files
@@ -41,12 +41,6 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 		{
 			// constructor code
 			src = _src;
-
-			// Set up poller.
-			var poller:Timer = new Timer(500);
-			poller.addEventListener(TimerEvent.TIMER, loadData);
-			poller.start();
-
 		}
 
 		public function loadData (e:TimerEvent):void
@@ -55,6 +49,15 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 			xmlLoader.addEventListener(Event.COMPLETE, onComplete);
 			xmlLoader.addEventListener(ErrorEvent.ERROR, onError);
 			xmlLoader.load(new URLRequest(src));
+		}
+		
+		public function start(repeatTime:uint = 500){
+			
+			// Set up poller.
+			var poller:Timer = new Timer(repeatTime);
+			poller.addEventListener(TimerEvent.TIMER, loadData);
+			poller.start();
+			
 		}
 
 		//private methods
@@ -65,6 +68,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 			timestamp = streamData.elements("timestamp");
 
 			if (timestamp != timestampOld && !animating) {
+				trace(streamData);
 				dispatchEvent(new ExEvent(ExEvent.UPDATED, streamData));
 			}
 		}
